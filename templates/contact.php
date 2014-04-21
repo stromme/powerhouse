@@ -88,7 +88,7 @@ get_header(); ?>
             <div class="name"><?=$t->post_title?></div>
             <div class="position"><?=$t->term_name?></div>
             <?php if($t->post_excerpt!=''){ ?>
-            <p class="excerpt"><?=substr($t->post_excerpt, 0, strpos($t->post_excerpt, ' ', 80))?>... <a href="<?=$t->guid?>">Read more</a></p>
+            <p class="excerpt"><?=substr($t->post_excerpt, 0, strpos($t->post_excerpt, ' ', 78))?>... <a href="<?=$t->guid?>">Read more</a></p>
             <?php } ?>
             <div class="social-contact">
               <?php if($fb!=''){ ?><a href="<?=$fb?>" class="social facebook"></a><?php } ?>
