@@ -128,7 +128,7 @@ get_header(); ?>
       <p>Learn professional crack sealing techniques</p>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <a href="videos" class="watch-more"><span class="glyphicon glyphicon-th-large"></span> Watch more videos</a>
+      <a href="<?=get_home_url()?>/videos/" class="watch-more"><span class="glyphicon glyphicon-th-large"></span> Watch more videos</a>
     </div>
   </div>
 </div>
@@ -178,7 +178,7 @@ get_header(); ?>
       </div>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <a href="news" class="read-more"><span class="glyphicon glyphicon-th-large"></span> Read older articles</a>
+      <a href="<?=get_home_url()?>/news/" class="read-more"><span class="glyphicon glyphicon-th-large"></span> Read older articles</a>
     </div>
   </div>
 </div>

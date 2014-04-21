@@ -13,7 +13,7 @@ class Powerhouse_Videos {
  	 * @since 0.0.1
  	 */
  	function register_meta_box() {
- 		add_meta_box('services_meta', 'Video Info',  array( &$this, 'render_meta_box_content' ), 'videos');
+ 		add_meta_box('video_meta', 'Video Info',  array( &$this, 'render_meta_box_content' ), 'videos');
  	}
 
  	/**

@@ -1,3 +1,14 @@
+@media (min-width: @screen-lg-min) {
+  .contact-details {
+    .col-lg-5 {
+       width: 33.666667%;
+    }
+    .col-lg-7 {
+       width: 66.333333%;
+    }
+  }
+}
+
 @media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
   #header {
     .brand {
@@ -40,6 +51,73 @@
           margin-left: 160px;
         }
       }
+    }
+  }
+
+  .contact-details {
+    height: auto;
+    .col-md-5 {
+       width: 39.666667%;
+    }
+    .col-md-7 {
+       width: 60.333333%;
+    }
+    .address {
+      height: auto;
+      .details {
+        margin-right: 200px;
+      }
+      .map {
+        width: 260px;
+        height: 200px;
+        position: relative;
+        img {
+          position: absolute;
+          width: 340px;
+          height: auto;
+          left: 50%;
+          margin-left: -170px;
+          margin-top: -10px;
+        }
+      }
+    }
+  }
+  .contact-block {
+    .contact-item {
+      .background {
+        .details {
+          padding-top: 15px;
+          padding-bottom: 0;
+          .position {
+            margin-bottom: 10px;
+          }
+          .excerpt {
+            font-size: 14px;
+          }
+          .social-contact {
+            bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .slide6040 {
+    .carousel-inner>.item{
+      max-height: 374px;
+      img {
+        height: 374px;
+      }
+    }
+    .cta {
+      .excerpt {
+        height: 374px;
+      }
+    }
+  }
+  .news-banner-6040 {
+    .p40 {
+      height: 390px;
     }
   }
 }
@@ -96,6 +174,53 @@
     .caption {
       top: 20px;
       left: 75px;
+    }
+  }
+  .contact-details {
+    .contact-cta {
+      height: auto;
+    }
+    >.row {
+      >div:first-child {
+        padding-left: 20px;
+      }
+      >div:last-child {
+        padding-right: 20px;
+      }
+    }
+  }
+  .contact-block {
+    .contact-item {
+      .background {
+        .photo {
+          width: 30%;
+        }
+        .details {
+          margin-left: 30%;
+        }
+      }
+    }
+  }
+
+  .slide6040 {
+    .carousel-inner {
+      >.item {
+        height: 289px;
+        >img {
+          max-height: none;
+        }
+      }
+    }
+    .cta {
+      .excerpt {
+        font-size: 24px;
+        height: 289px;
+      }
+    }
+  }
+  .news-banner-6040 {
+    .p40 {
+      height: 415px;
     }
   }
 }
@@ -168,6 +293,105 @@
     .caption {
       font-size: 24px;
       left: 50px;
+    }
+  }
+  .contact-details .address {
+    height: auto;
+    .map {
+      float: none;
+      width: 100%;
+      height: auto;
+      text-align: center;
+      img {
+        display: inline-block;
+        width: 100%;
+        height: auto;
+      }
+    }
+    .details {
+      margin-right: 0;
+    }
+  }
+  .contact-block {
+    .contact-item {
+      .background {
+        .photo {
+          width: 45%;
+        }
+        .details {
+          margin-left: 45%;
+          padding-bottom: 50px;
+        }
+      }
+    }
+  }
+
+  .slide6040 {
+    background-size: 100% 100%;
+    .p60,
+    .p40 {
+      width: 100%;
+      float: none;
+    }
+    img {
+      width: 100%;
+    }
+    .carousel-inner {
+      >.item {
+        max-height: 289px;
+        >img {
+          height: auto;
+          width: auto;
+          min-width: 100%;
+          min-height: 289px;
+          max-width: 100%;
+        }
+      }
+    }
+    .cta {
+      .excerpt {
+        font-size: 30px;
+        height: auto;
+        padding: 50px;
+      }
+    }
+  }
+
+  .news-banner-6040 {
+    .p60 {
+      float: none;
+      width: 100%;
+    }
+    .p40 {
+      float: none;
+      width: 100%;
+      background-size: 100% auto;
+      height: 240px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-block {
+    .contact-item {
+      .background {
+        .photo {
+          float: none;
+          width: 100%;
+        }
+        .details {
+          margin-left: 0;
+          padding-bottom: 50px;
+        }
+      }
+    }
+  }
+  .slide6040 {
+    .cta {
+      .excerpt {
+        font-size: 24px;
+        padding: 30px;
+      }
     }
   }
 }

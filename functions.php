@@ -87,6 +87,7 @@ function powerhouse_v2_setup() {
   include_once('inc/theme-functions.php');
 
   add_action( 'wp_enqueue_scripts', 'load_css' );
+  add_action( 'wp_head', 'add_header' );
 
   // Load Bootstrap Framework
   wp_register_script( 'theme-bootstrap-js', get_template_directory_uri().'/bootstrap/dist/js/bootstrap.min.js', array('jquery'));
@@ -95,5 +96,10 @@ function powerhouse_v2_setup() {
   wp_enqueue_script( 'theme-js' );
 
 }
+
+function add_header(){
+  echo '<link rel="icon" href="'.get_template_directory_uri().'/images/favicon.png" type="image/png" />';
+}
+
 endif; // powerhouse_v2_setup
 add_action( 'after_setup_theme', 'powerhouse_v2_setup' );

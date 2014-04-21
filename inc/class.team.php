@@ -62,7 +62,7 @@ class Powerhouse_Team {
  	  );
 
  	  register_taxonomy('position',array('team'), array(
- 	    'hierarchical' => false,
+ 	    'hierarchical' => true,
  	    'labels' => $labels,
  	    'show_ui' => true,
  	    'show_admin_column' => true,
@@ -115,10 +115,11 @@ class Powerhouse_Team {
  				'show_ui' => true,
  				'show_in_menu' => true,
  				'publicly_queryable' => true,
- 				'rewrite' => array('slug' => 'team'),
- 				'supports' => array('title', 'thumbnail')
+ 				'rewrite' => array('slug' => 'team', 'with_front' => true),
+ 				'supports' => array('title', 'thumbnail', 'editor', 'excerpt')
  			)
  		);
+    flush_rewrite_rules( false );
  		add_action('wp_insert_post', array( &$this, 'insert_post_meta_data'), 10, 2 );
  	}
 }
