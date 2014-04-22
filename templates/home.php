@@ -144,7 +144,7 @@ get_header(); ?>
           <div class="date"><?=date('M d, Y', strtotime($news[0]->post_date))?></div>
           <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
           <a href="<?=$news[0]->guid?>" class="title"><?=$news[0]->post_title?></a>
-          <p><?=substr($news[0]->post_excerpt, 0, strpos($news[0]->post_excerpt, ' ', 180))?>... <a href="<?=$news[0]->guid?>">Read more</a></p>
+          <p><?=get_excerpt($news[0]->post_excerpt, 200)?>... <a href="<?=$news[0]->guid?>">Read more</a></p>
         </div>
       </div>
       <?php } ?>

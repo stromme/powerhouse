@@ -186,3 +186,7 @@ function load_more_news_callback(){
     )
   ));
 }
+
+function get_excerpt($exc, $length){
+  return substr($exc,0,($dot_pos=strrpos(substr($exc, 0, $length), '.'))?$dot_pos:(($space_pos=strrpos(substr($exc, 0, $length), '.'))?$space_pos:$length));
+}
