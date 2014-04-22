@@ -159,3 +159,33 @@ $(document).ready(function(){
     }
   });
 });
+
+function share_project(social_media, project_url, message){
+  var width, height, left, top, url = '';
+  switch(social_media){
+    case 'googleplus':
+      width  = 620;
+      height = 620;
+      url = "https://plus.google.com/share?url="+encodeURIComponent(project_url);
+      break;
+    case 'twitter':
+      width  = 600;
+      height = 258;
+      url = "http://twitter.com/intent/tweet?url="+encodeURIComponent(project_url)+"&text="+encodeURIComponent(message)+"&count=none/";
+      break;
+    case 'facebook':
+      width = 600;
+      height = 325;
+      url = "http://www.facebook.com/sharer.php?u="+encodeURIComponent(project_url)+"&t="+encodeURIComponent(message);
+      break;
+  }
+  left   = ($(window).width()  - width)  / 2;
+  top    = ($(window).height() - height) / 2;
+  var opts   = 'status=1' +
+           ',width='  + width +
+           ',height=' + height +
+           ',top='    + top +
+           ',left='   + left +
+           ',resizable=1';
+  window.open(url, social_media, opts);
+}
