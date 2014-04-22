@@ -17,7 +17,7 @@ if(isset($wp_query->queried_object->term_id)){
 
       $news = get_posts(array(
         'post_type' => 'news',
-        'numberposts' => -1,
+        'numberposts' => 11,
         'tax_query' => array(
           array(
             'taxonomy' => 'category',
@@ -34,8 +34,11 @@ if(isset($wp_query->queried_object->term_id)){
           <div class="list">
             <div class="title">NEWS</div>
             <ul>
-              <?php foreach($news as $n){ ?>
+              <?php $i=0; foreach($news as $n){ if($i<10){ ?>
               <li><a href="<?=$n->guid?>"><?=$n->post_title?></a></li>
+              <?php } $i++; } ?>
+              <?php if(count($news)>10){ ?>
+              <li><a href="<?=get_home_url()?>/news/">Read More News &raquo;</a></li>
               <?php } ?>
             </ul>
           </div>
