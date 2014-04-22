@@ -107,7 +107,7 @@ get_header(); ?>
     ?>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
       <a href="<?=$v->guid?>" class="video-container">
-        <img src="<?=$youtube_thumb?>" />
+        <img src="<?=($youtube_thumb!='')?$youtube_thumb:get_template_directory_uri().'/images/video_thumb.jpg'?>" />
         <span class="video-button"></span>
       </a>
       <div class="duration"><?=$duration?> <span class="glyphicon glyphicon-time"></span></div>
