@@ -1,6 +1,8 @@
 <?php
 get_header();
 while ( have_posts() ) : the_post();
+global $post;
+$post = get_post(get_the_ID());
 $post_meta = get_post_meta(get_the_ID());
 $duration = isset($post_meta['duration'][0])?$post_meta['duration'][0]:'';
 $url = isset($post_meta['youtube_url'][0])?$post_meta['youtube_url'][0]:'';
