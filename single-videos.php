@@ -21,7 +21,7 @@ $recent = get_posts(array(
     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8">
       <h1><?php the_title(); ?></h1><br />
 
-      <?=wp_oembed_get($url);?>
+      <?=($url!='')?wp_oembed_get($url):'<p>Sorry, video not found.</p>';?>
       <br /><br />
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
