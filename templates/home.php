@@ -97,36 +97,25 @@ get_header(); ?>
         <div class="subtitle">Learn how to protect and maintain your asphalt.</div>
       </fieldset>
     </div>
+    <?php
+    $videos = get_items('videos', 3);
+    if(count($videos)>0){
+      foreach($videos as $v){
+        $youtube_url = get_post_meta($v->ID, 'youtube_url', true);
+        $duration = get_post_meta($v->ID, 'duration', true);
+        $youtube_thumb = get_youtube_thumb($youtube_url);
+    ?>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
+      <a href="<?=$v->guid?>" class="video-container">
+        <img src="<?=$youtube_thumb?>" />
         <span class="video-button"></span>
       </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
+      <div class="duration"><?=$duration?> <span class="glyphicon glyphicon-time"></span></div>
       <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
       <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
+      <p><?=$v->post_title?></p>
     </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
+    <?php } } ?>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <a href="<?=get_home_url()?>/videos/" class="watch-more"><span class="glyphicon glyphicon-th-large"></span> Watch more videos</a>
     </div>
@@ -140,42 +129,55 @@ get_header(); ?>
         <div class="subtitle">Leading the roadway and parking lot paving for over 50 years.</div>
       </fieldset>
     </div>
+    <?php
+    $news = get_items('news', 3);
+    ?>
     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+      <?php if(isset($news[0])){
+        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[0]->ID), 'large');
+        $source_name = get_post_meta($news[0]->ID, 'source_name', true);
+        $source_url = get_post_meta($news[0]->ID, 'source_url', true);
+      ?>
       <div class="news-item feature">
-        <a href="" class="thumb">
-          <img src="<?=get_template_directory_uri()?>/images/news_thumb1.jpg" />
-        </a>
+        <a href="" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
         <div class="content">
-          <div class="date">November 11, 2013</div>
-          <ul class="category"><li><a href="">Powerhouse Paving</a></li></ul>
-          <a href="" class="title">The Nature's Fury Challenge by Orange Industries</a>
-          <p>A sidewalk on Greenwich Street has one of the first signs of what a
-          Sandy-proofed New York subway could look like: a floodgate hidden
-          in a ventilation grate that may one day allow workers...<a href="">Read more</a></p>
+          <div class="date"><?=date('M d, Y', strtotime($news[0]->post_date))?></div>
+          <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
+          <a href="<?=$news[0]->guid?>" class="title"><?=$news[0]->post_title?></a>
+          <p><?=substr($news[0]->post_excerpt, 0, strpos($news[0]->post_excerpt, ' ', 180))?>... <a href="<?=$news[0]->guid?>">Read more</a></p>
         </div>
       </div>
+      <?php } ?>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+      <?php if(isset($news[1])){
+        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[1]->ID), 'large');
+        $source_name = get_post_meta($news[1]->ID, 'source_name', true);
+        $source_url = get_post_meta($news[1]->ID, 'source_url', true);
+      ?>
       <div class="news-item">
-        <a href="" class="thumb">
-          <img src="<?=get_template_directory_uri()?>/images/news_thumb2.jpg" />
-        </a>
+        <a href="" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);background-position:center center;"></a>
         <div class="content">
-          <div class="date">November 11, 2013</div>
-          <ul class="category"><li><a href="">The Wall Street Journal</a></li></ul>
-          <a href="" class="title">Passaic Valley Sewage Commission protected by Muscle Wall</a>
+          <div class="date"><?=date('M d, Y', strtotime($news[1]->post_date))?></div>
+          <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
+          <a href="<?=$news[1]->guid?>" class="title"><?=$news[1]->post_title?></a>
         </div>
       </div>
+      <?php } ?>
+      <?php if(isset($news[2])){
+        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[2]->ID), 'large');
+        $source_name = get_post_meta($news[2]->ID, 'source_name', true);
+        $source_url = get_post_meta($news[2]->ID, 'source_url', true);
+      ?>
       <div class="news-item">
-        <a href="" class="thumb">
-          <img src="<?=get_template_directory_uri()?>/images/news_thumb2.jpg" />
-        </a>
+        <a href="" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
         <div class="content">
-          <div class="date">November 11, 2013</div>
-          <ul class="category"><li><a href="">The Wall Street Journal</a></li></ul>
-          <a href="" class="title">Passaic Valley Sewage Commission protected by Muscle Wall</a>
+          <div class="date"><?=date('M d, Y', strtotime($news[2]->post_date))?></div>
+          <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
+          <a href="<?=$news[2]->guid?>" class="title"><?=$news[2]->post_title?></a>
         </div>
       </div>
+      <?php } ?>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
       <a href="<?=get_home_url()?>/news/" class="read-more"><span class="glyphicon glyphicon-th-large"></span> Read older articles</a>

@@ -41,7 +41,7 @@ class Powerhouse_Videos {
  	function insert_post_meta_data($post_id, $post = null) {
      if($post->post_type=='videos'){
        $meta_keys = array(
-         'video_url',
+         'youtube_url',
          'duration'
        );
        if (count($meta_keys) > 0) {

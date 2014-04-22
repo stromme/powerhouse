@@ -1,8 +1,18 @@
 body {
   background: #eeeeee;
-  a:focus,
-  a:hover {
-    text-decoration: none;
+  a {
+    color: @lightblue;
+    .tux-icon {
+      color: @lightblue;
+    }
+    &:focus,
+    &:hover {
+      color: @blue;
+      text-decoration: none;
+      .tux-icon {
+        color: @blue;
+      }
+    }
   }
 }
 
@@ -238,11 +248,13 @@ body {
   top: 50%;
   margin-top: -25px;
   text-align: center;
+  .transition(all 0.3s ease);
   &.left {
     background: fadeOut(white, 60%);
     left: 20px;
     .glyphicon {
       left: 50%;
+      margin-left: -15px;
     }
   }
   &.right {
@@ -585,8 +597,9 @@ fieldset {
     position: relative;
     padding-bottom: 25px;
     background: url(../images/video_shadow.png) no-repeat center bottom scroll transparent;
+    text-align: center;
     img {
-      display: block;
+      display: inline-block;
       max-width: 100%;
       background: black;
     }
@@ -683,19 +696,21 @@ fieldset {
     margin-bottom: 20px;
     .thumb {
       float: left;
-      background: black;
       position: relative;
       z-index: 2;
       width: 160px;
       height: 160px;
-      img {
-        .transition(all 0.2s ease);
-      }
+      .transition(all 0.2s ease);
+      background-repeat: no-repeat;
+      background-attachment: scroll;
+      background-position: center center;
+      background: @gray-dark;
+      background-size: auto 100%;
       &:focus,
       &:hover {
-        img {
-          opacity: 0.8;
-        }
+        background-size: auto 150%;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
     }
     .content {
@@ -758,6 +773,8 @@ fieldset {
       .thumb {
         width: 300px;
         height: 300px;
+        background-repeat: no-repeat;
+        background-position: center center;
       }
       .content {
         margin-left: 300px;
@@ -791,6 +808,10 @@ fieldset {
   &.news-page {
     .news-item {
       margin-bottom: 50px;
+      .thumb {
+        background-repeat: no-repeat;
+        background-position: center center;
+      }
     }
   }
   .read-more {
@@ -1075,6 +1096,51 @@ fieldset {
     font-size: 24px;
     vertical-align: sub;
     margin-right: 5px;
+  }
+  &.disabled {
+    color: @gray-light;
+    &:focus,
+    &:hover {
+      color: @gray-light;
+    }
+    .glyphicon-refresh {
+      -webkit-animation-name: spin;
+      -webkit-animation-duration: 500ms;
+      -webkit-animation-iteration-count: infinite;
+      -webkit-animation-timing-function: linear;
+      -moz-animation-name: spin;
+      -moz-animation-duration: 500ms;
+      -moz-animation-iteration-count: infinite;
+      -moz-animation-timing-function: linear;
+      -ms-animation-name: spin;
+      -ms-animation-duration: 500ms;
+      -ms-animation-iteration-count: infinite;
+      -ms-animation-timing-function: linear;
+      animation-name: spin;
+      animation-duration: 500ms;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+  }
+}
+@-ms-keyframes spin {
+  from { -ms-transform: rotate(0deg); }
+  to { -ms-transform: rotate(360deg); }
+}
+@-moz-keyframes spin {
+  from { -moz-transform: rotate(0deg); }
+  to { -moz-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
   }
 }
 
@@ -1364,4 +1430,16 @@ fieldset {
       color: @blue;
     }
   }
+}
+
+.single-videos {
+  iframe {
+    max-width: 100%;
+  }
+}
+
+.alert-error {
+  color: #b94a48;
+  background-color: #f2dede;
+  border-color: #eed3d7;
 }

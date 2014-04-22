@@ -1,4 +1,7 @@
-<?php get_header();?>
+<?php get_header();
+$per_page = 8;
+$videos = get_items('videos', $per_page+1);
+?>
 <div class="static-banner">
   <img src="<?=get_template_directory_uri()?>/images/static_banner.jpg" />
   <div class="caption">New York's<br /><strong>most experienced</strong><br />paving team</div>
@@ -11,99 +14,32 @@
         <div class="subtitle">Learn how to protect and maintain your asphalt.</div>
       </fieldset>
     </div>
+
+    <?php if(count($videos)>0){
+      $i = 0;
+      foreach($videos as $v){
+        if($i<$per_page){
+          $youtube_url = get_post_meta($v->ID, 'youtube_url', true);
+          $duration = get_post_meta($v->ID, 'duration', true);
+          $youtube_thumb = get_youtube_thumb($youtube_url);
+    ?>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
+      <a href="<?=$v->guid?>" class="video-container">
+        <img src="<?=$youtube_thumb?>" />
         <span class="video-button"></span>
       </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
+      <div class="duration"><?=$duration?> <span class="glyphicon glyphicon-time"></span></div>
       <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
       <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
+      <p><?=$v->post_title?></p>
     </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
-    <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 video-item">
-      <a href="" class="video-container">
-        <img src="<?=get_template_directory_uri()?>/images/video_sample.jpg" />
-        <span class="video-button"></span>
-      </a>
-      <div class="duration">1:24 <span class="glyphicon glyphicon-time"></span></div>
-      <div class="share">Share <a href=""><span class="social google_plus"></span></a><a href=""><span class="social twitter"></span></a><a href=""><span class="social facebook"></span></a></div>
-      <div class="clearfix"></div>
-      <p>Learn professional crack sealing techniques</p>
-    </div>
+    <?php } $i++; } } ?>
+    <?php if(count($videos)>$per_page){ ?>
+    <div id="video-pivot" class="clearfix"></div>
     <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-      <a href="videos" class="watch-more"><span class="glyphicon glyphicon-refresh"></span> Watch more videos</a>
+      <a href="" class="watch-more"><span class="glyphicon glyphicon-refresh"></span> Watch more videos</a>
     </div>
+    <?php } ?>
   </div>
 </div>
 <?php
