@@ -209,16 +209,16 @@ function format_phone_plain($number) {
 function get_facebook_meta_for_videos(){
   global $post;
   if(strstr($_SERVER['REQUEST_URI'], '/videos/') && $post){
-    echo '<meta property="og:type" content="website"/>'."\n";
-    echo '<meta property="og:url" content="'.$post->guid.'"/>'."\n";
-    echo '<meta property="og:title" content="'.$post->post_title.'"/>'."\n";
-    echo '<meta property="og:description" content="'.$post->content.'"/>'."\n";
+    echo '  <meta property="og:type" content="website"/>'."\n";
+    echo '  <meta property="og:url" content="'.$post->guid.'"/>'."\n";
+    echo '  <meta property="og:title" content="'.$post->post_title.'"/>'."\n";
+    echo '  <meta property="og:description" content="'.$post->content.'"/>'."\n";
     $url = get_post_meta($post->ID, 'youtube_url', true);
     $youtube_thumb = '';
     if($url!=''){
       $youtube_thumb = get_youtube_thumb($url);
     }
-    echo '<meta property="og:image" content="'.(($youtube_thumb!='')?$youtube_thumb:(get_home_url().'/images/video_thumb.jpg')).'"/>'."\n";
+    echo '  <meta property="og:image" content="'.(($youtube_thumb!='')?$youtube_thumb:(get_home_url().'/images/video_thumb.jpg')).'"/>'."\n";
   }
 }
-add_action('wp_head', 'get_facebook_meta_for_videos');
+add_action('wp_head', 'get_facebook_meta_for_videos', 1);
