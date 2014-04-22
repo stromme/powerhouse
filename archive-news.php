@@ -1,5 +1,5 @@
 <?php get_header();
-$per_page = 1;
+$per_page = 8;
 $news = get_items('news', $per_page+1);
 ?>
 <div class="static-banner">

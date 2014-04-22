@@ -126,7 +126,7 @@ function load_more_news_callback(){
   $done = false;
   $page = isset($_POST['page'])?intval($_POST['page']):'';
   if($page>1){
-    $per_page = 1;
+    $per_page = 8;
     $posts_args = array(
       'orderby'		     => 'date',
       'order'			     => 'DESC',

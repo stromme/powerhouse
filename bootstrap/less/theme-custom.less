@@ -364,8 +364,13 @@ body {
     .affiliate-link {
       display: block;
       margin-bottom: 10px;
+      .transition(all 0.3s ease);
       img {
         display: block;
+      }
+      &:focus,
+      &:hover {
+        opacity: 0.6;
       }
     }
   }
@@ -958,6 +963,14 @@ fieldset {
         .name {
           font-size: 20px;
           line-height: 18px;
+          color: lighten(@gray, 10%);
+        }
+        a.name {
+          color: lighten(@gray, 10%);
+          &:focus,
+          &:hover {
+            color: @gray-light;
+          }
         }
         .position {
           font-size: 14px;
@@ -1195,6 +1208,7 @@ fieldset {
           display: block;
           color: @lightblue;
           padding: 10px;
+          .transition(all 0.3s ease);
           &:focus,
           &:hover {
             color: @blue;
@@ -1208,6 +1222,7 @@ fieldset {
   >a,
   .dark, {
     display: block;
+    .transition(all 0.3s ease);
     .glyphicon {
       margin-right: 10px;
       font-size: 24px;

@@ -27,7 +27,7 @@ get_header(); ?>
     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
       <div class="address">
         <div class="map">
-          <img src="<?=get_template_directory_uri()?>/images/map.jpg" />
+          <img src="http://maps.google.com/maps/api/staticmap?center=23+West+Beech+Street+Islip%2C+NY+11751&amp;zoom=11&amp;size=400x300&amp;maptype=roadmap&amp;markers=color:blue%7Clabel:A%7C23+West+Beech+Street+Islip%2C+NY+11751&amp;sensor=false&amp;key=AIzaSyDsgeBIjdh92uqzr0jWMHz_2YRljj_4sxc" />
         </div>
         <div class="details">
           <span class="glyphicon glyphicon-info-sign"></span>
@@ -85,7 +85,7 @@ get_header(); ?>
             <img src="<?=isset($thumb[0])?$thumb[0]:get_template_directory_uri().'/images/no-photo.jpg'?>" />
           </div>
           <div class="details">
-            <div class="name"><?=$t->post_title?></div>
+            <a href="<?=$t->guid?>" class="name"><?=$t->post_title?></a>
             <div class="position"><?=$t->term_name?></div>
             <?php if($t->post_excerpt!=''){ ?>
             <p class="excerpt"><?=get_excerpt($t->post_excerpt, 80)?>... <a href="<?=$t->guid?>">Read more</a></p>
