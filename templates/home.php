@@ -141,7 +141,7 @@ get_header(); ?>
       <div class="news-item feature">
         <a href="<?=$news[0]->guid?>" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
         <div class="content">
-          <div class="date"><?=date('M d, Y', strtotime($news[0]->post_date))?></div>
+          <div class="date"><?=date('F d, Y', strtotime($news[0]->post_date))?></div>
           <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
           <a href="<?=$news[0]->guid?>" class="title"><?=$news[0]->post_title?></a>
           <p><?=get_excerpt($news[0]->post_excerpt, 200)?>... <a href="<?=$news[0]->guid?>">Read more</a></p>

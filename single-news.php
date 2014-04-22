@@ -35,7 +35,7 @@ $recent = get_posts(array(
     <?php if($next_post!=''){ ?><div class="next"><a href="<?=get_permalink($next_post)?>">Next article <span class="glyphicon glyphicon-expand"></span></a></div><?php } ?>
     <div class="clearfix"></div>
     <h1><?=get_the_title()?></h1>
-    <?php if($source && $url){ ?><a href="<?=$url?>" class="source" target="_blank" rel="nofollow"><?=$source?></a> <?php } ?><span class="date">| January 15, 2014</span>
+    <?php if($source && $url){ ?><a href="<?=$url?>" class="source" target="_blank" rel="nofollow"><?=$source?></a> <?php } ?><span class="date">| <?=date('F d, Y', strtotime(get_the_date('Y-m-d H:i:s')))?></span>
     <p class="excerpt"><?=get_the_excerpt();?></p>
     <div class="social-share">
       <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="false" data-share="false"></div>

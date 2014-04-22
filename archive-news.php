@@ -26,7 +26,7 @@ $news = get_items('news', $per_page+1);
       <div class="news-item">
         <a href="<?=$n->guid?>" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
         <div class="content">
-          <div class="date"><?=date('M d, Y', strtotime($n->post_date))?></div>
+          <div class="date"><?=date('F d, Y', strtotime($n->post_date))?></div>
           <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
           <a href="<?=$n->guid?>" class="title"><?=$n->post_title?></a>
         </div>
