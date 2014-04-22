@@ -17,12 +17,12 @@ $thumb = wp_get_attachment_image_src( get_post_thumbnail_id(get_the_ID()), 'larg
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
       <div class="photo">
-        <img src="<?=isset($thumb[0])?$thumb[0]:''?>" />
+        <img src="<?=isset($thumb[0])?$thumb[0]:get_template_directory_uri().'/images/no-photo.jpg'?>" />
       </div>
       <div class="details">
         <div class="name"><?=get_the_title()?></div>
         <div class="position"><?=isset($terms[0]->name)?$terms[0]->name:''?></div>
-        <div class="phone"><?php if($phone!=''){ ?><a href="tel:<?=$phone?>"><span class="glyphicon glyphicon-earphone"></span> <?=$phone?></a><?php } ?></div>
+        <div class="phone"><?php if($phone!=''){ ?><a href="tel:<?=format_phone_plain($phone)?>"><span class="glyphicon glyphicon-earphone"></span> <?=$phone?></a><?php } ?></div>
         <div class="email"><?php if($email!=''){ ?><a href="mailto:<?=$email?>"><span class="glyphicon glyphicon-envelope"></span> <?=$email?></a><?php } ?></div>
         <div class="social-contact">
           <?php if($fb!=''){ ?><a href="<?=$fb?>" class="social facebook"></a><?php } ?>

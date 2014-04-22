@@ -17,9 +17,9 @@ get_header(); ?>
   <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
       <div class="contact-cta">
-        <div><a href="" class="dark"><span class="glyphicon glyphicon-question-sign"></span> HAVE QUESTIONS?</a></div>
-        <div><a href=""><span class="glyphicon glyphicon-earphone"></span> (631) 206-0046</a></div>
-        <div><a href=""><span class="glyphicon glyphicon-envelope"></span> support@powerhousepaving.com</a></div>
+        <div><span class="dark"><span class="glyphicon glyphicon-question-sign"></span> HAVE QUESTIONS?</span></div>
+        <div><a href="tel:<?=format_phone_plain('(631) 206-0046')?>"><span class="glyphicon glyphicon-earphone"></span> (631) 206-0046</a></div>
+        <div><a href="mailto:support@powerhousepaving.com"><span class="glyphicon glyphicon-envelope"></span> support@powerhousepaving.com</a></div>
         <a class="button cta" href="">GET AN ESTIMATE</a>
       </div>
       <div class="shadow"></div>
@@ -82,7 +82,7 @@ get_header(); ?>
       <div class="contact-item">
         <div class="background">
           <div class="photo">
-            <img src="<?=isset($thumb[0])?$thumb[0]:''?>" />
+            <img src="<?=isset($thumb[0])?$thumb[0]:get_template_directory_uri().'/images/no-photo.jpg'?>" />
           </div>
           <div class="details">
             <div class="name"><?=$t->post_title?></div>
@@ -111,90 +111,5 @@ get_header(); ?>
     }
   }
   ?>
-  <!--div class="row">
-    <div class="col-xs-12">
-      <fieldset><legend><h2 class="title">Orange Industries Team</h2></legend></fieldset>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <div class="contact-item">
-        <div class="background">
-          <div class="photo">
-            <img src="<?=get_template_directory_uri()?>/images/photo-amandavega.jpg" />
-          </div>
-          <div class="details">
-            <div class="name">Amanda Vega</div>
-            <div class="position">Project Manager</div>
-            <div class="social-contact">
-              <a href="" class="social facebook"></a>
-              <a href="" class="social google_plus"></a>
-              <a href="" class="social twitter"></a>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <div class="contact-item">
-        <div class="background">
-          <div class="photo">
-            <img src="<?=get_template_directory_uri()?>/images/photo-amandavega.jpg" />
-          </div>
-          <div class="details">
-            <div class="name">Amanda Vega</div>
-            <div class="position">Project Manager</div>
-            <div class="social-contact">
-              <a href="" class="social facebook"></a>
-              <a href="" class="social google_plus"></a>
-              <a href="" class="social twitter"></a>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <div class="contact-item">
-        <div class="background">
-          <div class="photo">
-            <img src="<?=get_template_directory_uri()?>/images/photo-amandavega.jpg" />
-          </div>
-          <div class="details">
-            <div class="name">Amanda Vega</div>
-            <div class="position">Project Manager</div>
-            <div class="social-contact">
-              <a href="" class="social facebook"></a>
-              <a href="" class="social google_plus"></a>
-              <a href="" class="social twitter"></a>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-      <div class="contact-item">
-        <div class="background">
-          <div class="photo">
-            <img src="<?=get_template_directory_uri()?>/images/photo-amandavega.jpg" />
-          </div>
-          <div class="details">
-            <div class="name">Amanda Vega</div>
-            <div class="position">Project Manager</div>
-            <div class="social-contact">
-              <a href="" class="social facebook"></a>
-              <a href="" class="social google_plus"></a>
-              <a href="" class="social twitter"></a>
-              <div class="clearfix"></div>
-            </div>
-          </div>
-          <div class="clearfix"></div>
-        </div>
-      </div>
-    </div>
-  </div-->
 </div>
 <?php get_footer();

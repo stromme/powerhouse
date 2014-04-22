@@ -55,7 +55,7 @@
             </div>
           </span>
           <a href="" class="button cta">GET A QUOTE</a>
-          <a href="" class="button phone"><span class="glyphicon glyphicon-earphone"></span> (631) 277-8400</a>
+          <a href="tel:<?=format_phone_plain('(631) 277-8400')?>" class="button phone"><span class="glyphicon glyphicon-earphone"></span> (631) 277-8400</a>
           <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>

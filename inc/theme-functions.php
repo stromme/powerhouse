@@ -190,3 +190,8 @@ function load_more_news_callback(){
 function get_excerpt($exc, $length){
   return substr($exc,0,($dot_pos=strrpos(substr($exc, 0, $length), '.'))?$dot_pos:(($space_pos=strrpos(substr($exc, 0, $length), '.'))?$space_pos:$length));
 }
+
+function format_phone_plain($number) {
+  // Clear all non number characters
+  return preg_replace('/[^0-9]/', '', $number);
+}
