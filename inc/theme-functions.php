@@ -151,7 +151,7 @@ function load_more_news_callback(){
         $html .= '
     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
       <div class="news-item">
-        <a href="" class="thumb" style="background-image: url('.(isset($thumb[0])?$thumb[0]:'').');"></a>
+        <a href="'.$n->guid.'" class="thumb" style="background-image: url('.(isset($thumb[0])?$thumb[0]:'').');"></a>
         <div class="content">
           <div class="date">'.date('M d, Y', strtotime($n->post_date)).'</div>';
           if($source_name!='' && $source_url!=''){ $html .= '<ul class="category"><li><a href="'.$source_url.'" target="_blank" rel="nofollow">'.$source_name.'</a></li></ul>'; }

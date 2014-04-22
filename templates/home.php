@@ -139,7 +139,7 @@ get_header(); ?>
         $source_url = get_post_meta($news[0]->ID, 'source_url', true);
       ?>
       <div class="news-item feature">
-        <a href="" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
+        <a href="<?=$news[0]->guid?>" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
         <div class="content">
           <div class="date"><?=date('M d, Y', strtotime($news[0]->post_date))?></div>
           <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
