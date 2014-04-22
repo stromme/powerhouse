@@ -74,7 +74,7 @@ if($count_slide>0){
         </div>
         <a href="tel:<?=format_phone_plain('(631) 206-0046')?>"><span class="glyphicon glyphicon-earphone"></span> Talk to a specialist</a>
         <a href="mailto:support@powerhousepaving.com"><span class="glyphicon glyphicon-envelope"></span> Email us your question</a>
-        <div><a href="" class="button cta">GET AN ESTIMATE</a></div>
+        <div><a href="#estimate_form" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}" class="button cta">GET AN ESTIMATE</a></div>
         <div class="shadow"></div>
       </div>
       <?php if(count($resources)>0){ ?>

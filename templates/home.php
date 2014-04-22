@@ -46,20 +46,20 @@ get_header(); ?>
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 static-ads">
       <h3>Concrete Installation & Repair</h3>
       <p>From sidewalks to roadways. Powerhouse has the <strong>manpower and equipment</strong> to handle concrete projects of any scale.</p>
-      <a href="" class="chevron left">Learn more <b class="tux-icon chevron"></b></a>
-      <a href="" class="chevron right">Request a quote <b class="tux-icon chevron"></b></a>
+      <a href="<?=get_home_url()?>/concrete-masonry/" class="chevron left">Learn more <b class="tux-icon chevron"></b></a>
+      <a href="#estimate_form" class="chevron right">Request a quote <b class="tux-icon chevron"></b></a>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 static-ads">
       <h3>Asphalt Paving & Maintenance</h3>
       <p>Infrared repair, sawcut, or miling repair. Whatever the need is Powerhouse crews provide asphalt repair with <strong>minimal traffic flow disturbance.</strong></p>
-      <a href="" class="chevron left">Learn more <b class="tux-icon chevron"></b></a>
-      <a href="" class="chevron right">Request a quote <b class="tux-icon chevron"></b></a>
+      <a href="<?=get_home_url()?>/asphalt-paving/" class="chevron left">Learn more <b class="tux-icon chevron"></b></a>
+      <a href="#estimate_form" class="chevron right">Request a quote <b class="tux-icon chevron"></b></a>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 static-ads">
       <h3>Drainage Installation & Repair</h3>
       <p>Our heavy equipment fleet can handle all size of precast including 12' in diameter. <strong>Get the job done right the first time</strong> with Powerhouse.</p>
-      <a href="" class="chevron left">Learn more <b class="tux-icon chevron"></b></a>
-      <a href="" class="chevron right">Request a quote <b class="tux-icon chevron"></b></a>
+      <a href="<?=get_home_url()?>/drainage-work/" class="chevron left">Learn more <b class="tux-icon chevron"></b></a>
+      <a href="#estimate_form" class="chevron right">Request a quote <b class="tux-icon chevron"></b></a>
     </div>
   </div>
 </div>

@@ -54,7 +54,7 @@
               <?php wp_nav_menu( array( 'theme_location' => 'learn', 'container' => false, 'menu_class' => '' ) ); ?>
             </div>
           </span>
-          <a href="" class="button cta">GET A QUOTE</a>
+          <a href="#estimate_form" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}" class="button cta">GET A QUOTE</a>
           <a href="tel:<?=format_phone_plain('(631) 277-8400')?>" class="button phone"><span class="glyphicon glyphicon-earphone"></span> (631) 277-8400</a>
           <div class="clearfix"></div>
         </div>
