@@ -112,9 +112,9 @@ get_header(); ?>
       </a>
       <div class="duration"><?=$duration?> <span class="glyphicon glyphicon-time"></span></div>
       <div class="share">Share
-        <a onclick="share_project('googleplus', '<?=$youtube_url?>', '<?='Great video: '.$v->post_title.' '.$youtube_url?>');" href="javascript:void(0);"><span class="social google_plus"></span></a>
-        <a onclick="share_project('twitter', '<?=$youtube_url?>', '<?='Great video: '.$v->post_title?>');" href="javascript:void(0);"><span class="social twitter"></span></a>
-        <a onclick="share_project('facebook', '<?=$youtube_url?>', '<?=str_replace("'", '\\\'', $v->post_title).' '.$youtube_url?>');" href="javascript:void(0);"><span class="social facebook"></span></a>
+        <a onclick="share_project('googleplus', '<?=($youtube_url!='')?$youtube_url:$v->guid?>', '<?='Great video: '.$v->post_title.' '.(($youtube_url!='')?$youtube_url:$v->guid)?>');" href="javascript:void(0);"><span class="social google_plus"></span></a>
+        <a onclick="share_project('twitter', '<?=($youtube_url!='')?$youtube_url:$v->guid?>', '<?='Great video: '.$v->post_title?>');" href="javascript:void(0);"><span class="social twitter"></span></a>
+        <a onclick="share_project('facebook', '<?=($youtube_url!='')?$youtube_url:$v->guid?>', '<?=str_replace("'", '\\\'', $v->post_title).' '.(($youtube_url!='')?$youtube_url:$v->guid)?>');" href="javascript:void(0);"><span class="social facebook"></span></a>
       </div>
       <div class="clearfix"></div>
       <p><?=$v->post_title?></p>
