@@ -134,7 +134,7 @@
       float: none;
       display: block;
       margin: 0 auto;
-      width: 590px;
+      width: 600px;
       max-width: 100%;
       .dropdown {
         &.services-menu {
@@ -143,7 +143,7 @@
             max-width: 98%;
             margin-left: 1%;
             .arrow {
-              left: 95px;
+              left: 145px;
             }
           }
         }
@@ -226,9 +226,39 @@
       height: 415px;
     }
   }
+  .not-exist {
+    width: 70%;
+  }
 }
 
 @media (max-width: @screen-xs-max) {
+  #header .main-nav-container {
+    padding-left: 0;
+    padding-right: 0;
+    .main-nav {
+      width: 545px;
+      text-align: center;
+      >span,
+      >a {
+        float: none;
+        display: inline-block;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      .dropdown.services-menu {
+        &:focus,
+        &:hover,
+        &.open {
+          .button .arrow {
+            display: block;
+          }
+        }
+        .dropdown-menu .arrow {
+          display: none;
+        }
+      }
+    }
+  }
   .carousel-control {
     width: 30px;
     height: 30px;
@@ -247,6 +277,9 @@
     }
   }
   .carousel {
+    .carousel-indicators {
+      bottom: -5px;
+    }
     .overlay {
       padding-top: 30px;
       font-size: 18px;
@@ -293,7 +326,7 @@
     overflow: hidden;
     img {
       width: 150%;
-      max-width: 150%;
+      max-width: none;
     }
     .caption {
       font-size: 24px;
@@ -375,9 +408,41 @@
       height: 240px;
     }
   }
+  .not-exist {
+    width: 80%;
+  }
 }
 
 @media (max-width: 480px) {
+  #footer .nav-menu {
+    margin-left: -10px;
+    .menu-item-has-children {
+      float: none;
+      width: 100%;
+    }
+  }
+  .carousel {
+    .overlay {
+      display: none;
+    }
+  }
+  .static-ads {
+    a {
+      &.left {
+        margin-right: 15px;
+      }
+      &.right {
+        margin-left: 15px;
+      }
+    }
+  }
+  .static-banner {
+    height: auto;
+    max-height: 150px;
+    img {
+      width: 180%;
+    }
+  }
   .contact-block {
     .contact-item {
       .background {
@@ -399,5 +464,68 @@
         padding: 30px;
       }
     }
+  }
+  fieldset .title {
+    font-size: 26px;
+  }
+  #header .main-nav-container .main-nav>.button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+  .article .row,
+  .video-block>.row,
+  .news-block>.row,
+  .article-content .row {
+    padding: 25px 0;
+    >div {
+      padding: 0 5px
+    }
+  }
+  .video-block p {
+    height: auto;
+    margin-bottom: 0;
+  }
+  .contact-details{
+    >.row {
+      padding: 25px 0 0 0;
+      >div {
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+    .contact-details .contact-cta {
+      padding: 15px;
+      >div .glyphicon {
+        margin-right: 5px;
+      }
+    }
+  }
+  .contact-block .row {
+    padding: 0 0 25px 0;
+  }
+  .contact-person {
+    .row {
+      padding: 25px 0 0 0;
+    }
+    .photo {
+      float: none;
+      max-width: 180px;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    .details .social-contact {
+      margin-bottom: 20px;
+    }
+  }
+  .news-banner-6040 .p60 {
+    padding: 25px;
+  }
+  .sidebar {
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  .not-exist {
+    font-size: 24px;
+    padding: 20px;
   }
 }

@@ -25,8 +25,6 @@ body {
 .button {
   display: inline-block;
   padding: 16px 0;
-  margin-left: 5px;
-  margin-right: 5px;
   line-height: 14px;
   .transition(all 0.2s ease);
   color: lighten(@gray, 15%);
@@ -111,11 +109,39 @@ body {
   }
 
   .dropdown {
+    height: 50px;
     &.learn-menu {
       .dropdown-menu {
         margin-left: -32px;
         width: 160px;
       }
+    }
+    &.services-menu .button {
+      position: relative;
+      .arrow {
+        display: none;
+        top: 42px;
+      }
+    }
+    .arrow {
+      position: absolute;
+      background: @gray-dark;
+      left: 50%;
+      top: 2px;
+    }
+    .arrow:after {
+      bottom: 100%;
+      left: 50%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+      border-color: none;
+      border-bottom-color: @gray-dark;
+      border-width: 12px;
+      margin-left: -12px;
     }
     .dropdown-menu {
       border: none;
@@ -123,26 +149,7 @@ body {
       background: @gray-dark;
       padding: 10px 10px 15px 10px;
       border-radius: 10px;
-      .arrow {
-      	position: absolute;
-      	background: @gray-dark;
-        left: 50%;
-        top: 2px;
-      }
-      .arrow:after {
-      	bottom: 100%;
-      	left: 50%;
-      	border: solid transparent;
-      	content: " ";
-      	height: 0;
-      	width: 0;
-      	position: absolute;
-      	pointer-events: none;
-      	border-color: none;
-      	border-bottom-color: @gray-dark;
-      	border-width: 12px;
-      	margin-left: -12px;
-      }
+      text-align: left;
       ul {
         list-style: none;
         margin: 0;
@@ -229,6 +236,9 @@ body {
 }
 
 .carousel {
+  .carousel-indicators {
+    bottom: 0;
+  }
   .overlay {
     background: fadeOut(#000, 50%);
     width: 30%;
@@ -1067,13 +1077,16 @@ fieldset {
     .name {
       font-size: 20px;
       line-height: 18px;
+      white-space: nowrap;
     }
     .position {
       font-size: 14px;
       color: @lightblue;
       margin-bottom: 20px;
+      white-space: nowrap;
     }
     .phone, .email {
+      white-space: nowrap;
       a {
         color: @lightblue;
         &:focus,

@@ -37,10 +37,10 @@
         <img src="<?=(get_header_image())?header_image():get_template_directory_uri().'/images/logo@2x.png'?>" width="427" alt="<?php bloginfo( 'name' ); ?>">
       </a>
       </div>
-      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7">
+      <div class="col-xs-12 col-sm-12 col-md-8 col-lg-7 main-nav-container">
         <div class="main-nav">
           <span class="dropdown services-menu">
-            <a href="#" data-toggle="dropdown" class="button hover dropdown-toggle"><span class="glyphicon glyphicon-cog"></span> SERVICES</a>
+            <a href="#" data-toggle="dropdown" class="button hover dropdown-toggle"><span class="glyphicon glyphicon-cog"></span> SERVICES<div class="arrow"></div></a>
             <?php $menu_count = count_menu('header'); ?>
             <div class="dropdown-menu menu-column-<?=$menu_count['parent']?>">
               <div class="arrow"></div>
@@ -54,7 +54,7 @@
               <?php wp_nav_menu( array( 'theme_location' => 'learn', 'container' => false, 'menu_class' => '' ) ); ?>
             </div>
           </span>
-          <a href="#estimate_form" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}" class="button cta">GET A QUOTE</a>
+          <a href="#estimate_form" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}" class="button cta"><span class="hidden-xs">GET AN</span> ESTIMATE</a>
           <a href="tel:<?=format_phone_plain('(631) 277-8400')?>" class="button phone"><span class="glyphicon glyphicon-earphone"></span> (631) 277-8400</a>
           <div class="clearfix"></div>
         </div>
