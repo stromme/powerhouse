@@ -18,7 +18,10 @@
           <h3>Get an Estimate</h3>
         </div>
         <div class="modal-body">
-          <?php echo do_shortcode('[contact-form-7 id="101" title="Contact form 1"]'); ?>
+          <?php
+            $whitelist = array('127.0.0.1', '::1');
+            echo do_shortcode('[contact-form-7 id="'.(in_array($_SERVER['REMOTE_ADDR'], $whitelist)?101:66).'" title="Estimate"]');
+          ?>
         </div>
       </div>
     </div>
