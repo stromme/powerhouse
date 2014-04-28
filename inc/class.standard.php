@@ -45,7 +45,7 @@ class Powerhouse_Standard {
  	}
 
   function resource_meta_box($post, $args) {
-    if($post->post_type=='services'){
+    if($post->post_type=='page'){
       $i = $args['args'][0];
       $custom_val = get_post_custom($post->ID);
       ?>
