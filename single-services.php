@@ -56,7 +56,7 @@ if($count_slide>0){
     </div>
   </div>
   <div class="p40 cta">
-    <div class="excerpt"><?=get_the_excerpt();?><br /><a href="" class="chevron">Get a quick estimate <b class="tux-icon chevron"></b></a></div>
+    <div class="excerpt"><?=get_the_excerpt();?><br /><a href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Body');}" class="chevron">Get a quick estimate <b class="tux-icon chevron"></b></a></div>
   </div>
   <div class="clearfix"></div>
 </div>
