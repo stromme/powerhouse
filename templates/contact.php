@@ -20,7 +20,7 @@ get_header(); ?>
         <div><span class="dark"><span class="glyphicon glyphicon-question-sign"></span> HAVE QUESTIONS?</span></div>
         <div><a href="tel:<?=format_phone_plain('(631) 206-0046')?>"><span class="glyphicon glyphicon-earphone"></span> (631) 206-0046</a></div>
         <div><a href="mailto:support@powerhousepaving.com"><span class="glyphicon glyphicon-envelope"></span> support@powerhousepaving.com</a></div>
-        <a class="button cta" href="#estimate_form" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}">GET AN ESTIMATE</a>
+        <a class="button cta" href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}">GET AN ESTIMATE</a>
       </div>
       <div class="shadow"></div>
     </div>

@@ -50,5 +50,6 @@
 		</div><!-- #colophon -->
 	</div><!-- #page -->
 	<?php wp_footer(); ?>
+  <? get_template_part('templates/modal', 'estimate'); ?>
 </body>
 </html>
