@@ -90,6 +90,7 @@ function powerhouse_v2_setup() {
   include_once('inc/class.videos.php');
   include_once('inc/class.news.php');
   include_once('inc/class.team.php');
+  include_once('inc/class.standard.php');
   include_once('inc/theme-functions.php');
 
   add_action( 'wp_enqueue_scripts', 'load_css_js' );
