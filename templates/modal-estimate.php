@@ -14,7 +14,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Get an Estimate</h3>
+        <h3>Get a Quote</h3>
       </div>
       <div class="modal-body">
         <?php
@@ -30,7 +30,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h3>Get an Estimate</h3>
+        <h3>Get a Quote</h3>
       </div>
       <div class="modal-body">
         Your message was sent successfully. Thanks!

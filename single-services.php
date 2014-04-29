@@ -56,7 +56,7 @@ if($count_slide>0){
     </div>
   </div>
   <div class="p40 cta">
-    <div class="excerpt"><?=get_the_excerpt();?><br /><a href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Body');}" class="chevron">Get a quick estimate <b class="tux-icon chevron"></b></a></div>
+    <div class="excerpt"><?=get_the_excerpt();?><br /><a href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Body');}" class="chevron">Get a quick quote <b class="tux-icon chevron"></b></a></div>
   </div>
   <div class="clearfix"></div>
 </div>
@@ -74,7 +74,7 @@ if($count_slide>0){
         </div>
         <a href="tel:<?=format_phone_plain('(631) 206-0046')?>"><span class="glyphicon glyphicon-earphone"></span> Talk to a specialist</a>
         <a href="mailto:support@powerhousepaving.com"><span class="glyphicon glyphicon-envelope"></span> Email us your question</a>
-        <div><a href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}" class="button cta">GET AN ESTIMATE</a></div>
+        <div><a href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Body');}" class="button cta">GET A QUOTE</a></div>
         <div class="shadow"></div>
       </div>
       <?php if(count($resources)>0){ ?>
