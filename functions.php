@@ -48,6 +48,8 @@ function load_css_js() {
   wp_register_script( 'theme-js', get_template_directory_uri().'/js/theme.js', array('jquery'));
   wp_enqueue_script( 'theme-js' );
   wp_localize_script('theme-js', 'ajaxurl', admin_url('admin-ajax.php'));
+  wp_enqueue_script('colorbox', get_template_directory_uri().'/js/jquery.colorbox-min.js', array('jquery'));
+  wp_enqueue_style('colorbox', get_template_directory_uri().'/css/colorbox.css', null, '1.0');
 }
 
 /**

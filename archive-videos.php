@@ -22,9 +22,10 @@ $videos = get_items('videos', $per_page+1);
           $youtube_url = get_post_meta($v->ID, 'youtube_url', true);
           $duration = get_post_meta($v->ID, 'duration', true);
           $youtube_thumb = get_youtube_thumb($youtube_url);
+          $youtube_embed_url = get_youtube_embed_url($youtube_url);
     ?>
     <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 video-item">
-      <a href="<?=$v->guid?>" class="video-container">
+      <a href="<?=/*$v->guid*/$youtube_embed_url?>" class="video-container colorbox-element" data-video="1">
         <img src="<?=($youtube_thumb!='')?$youtube_thumb:get_template_directory_uri().'/images/video_thumb.jpg'?>" />
         <span class="video-button"></span>
       </a>

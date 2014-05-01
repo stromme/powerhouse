@@ -9,12 +9,10 @@
  */
 
 get_header(); ?>
-<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+<div id="home-banner" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <!--li data-target="#home-banner" data-slide-to="0" class="active"></li-->
   </ol>
 
   <!-- Wrapper for slides -->
@@ -25,21 +23,15 @@ get_header(); ?>
       </div>
       <img src="<?=get_template_directory_uri()?>/images/slide_home.jpg" alt="Number one choice for parking lot and roadway paving in NY for over 50 years.">
     </div>
-    <div class="item">
-      <img src="<?=get_template_directory_uri()?>/images/slide_home.jpg" alt="Number one choice for parking lot and roadway paving in NY for over 50 years.">
-    </div>
-    <div class="item">
-      <img src="<?=get_template_directory_uri()?>/images/slide_home.jpg" alt="Number one choice for parking lot and roadway paving in NY for over 50 years.">
-    </div>
   </div>
 
   <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+  <!--a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
     <span class="glyphicon glyphicon-chevron-left"></span>
   </a>
   <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
     <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
+  </a-->
 </div>
 <div class="container">
   <div class="row">
@@ -104,9 +96,10 @@ get_header(); ?>
         $youtube_url = get_post_meta($v->ID, 'youtube_url', true);
         $duration = get_post_meta($v->ID, 'duration', true);
         $youtube_thumb = get_youtube_thumb($youtube_url);
+        $youtube_embed_url = get_youtube_embed_url($youtube_url);
     ?>
     <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
-      <a href="<?=$v->guid?>" class="video-container">
+      <a href="<?=/*$v->guid*/$youtube_embed_url?>" class="video-container colorbox-element" data-video="1">
         <img src="<?=($youtube_thumb!='')?$youtube_thumb:get_template_directory_uri().'/images/video_thumb.jpg'?>" />
         <span class="video-button"></span>
       </a>

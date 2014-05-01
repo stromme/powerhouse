@@ -614,6 +614,7 @@ fieldset {
   }
   .video-container {
     display: block;
+    outline: none;
     position: relative;
     padding-bottom: 25px;
     background: url(../images/video_shadow.png) no-repeat center bottom scroll transparent;
@@ -1504,5 +1505,25 @@ fieldset {
   }
   textarea {
     height: 100px;;
+  }
+}
+
+#colorbox {
+  max-width: 100%;
+  #cboxWrapper {
+    max-width: 100%;
+    #cboxContent {
+      max-width: 100%;
+      #cboxLoadedContent {
+        max-width: 98%;
+        iframe {
+          max-width: 100%;
+        }
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
   }
 }

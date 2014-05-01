@@ -50,6 +50,16 @@ function get_youtube_thumb($youtube_url){
   return preg_replace('/http(s)?:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9\-_]+).*$/', 'http://img.youtube.com/vi/$2/0.jpg', $youtube_url);
 }
 
+/**
+ * Get youtube embed url
+ *
+ * @param $youtube_url
+ * @return mixed
+ */
+function get_youtube_embed_url($youtube_url){
+  return preg_replace('/http(s)?:\/\/www\.youtube\.com\/watch\?v=([A-Za-z0-9\-_]+).*$/', 'http://www.youtube.com/embed/$2', $youtube_url);
+}
+
 add_action('wp_ajax_load_more_videos', 'load_more_videos_callback');
 add_action('wp_ajax_nopriv_load_more_videos', 'load_more_videos_callback');
 

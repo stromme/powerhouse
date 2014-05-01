@@ -158,6 +158,19 @@ $(document).ready(function(){
       post.doAjaxPost();
     }
   });
+
+  /**
+   * Colorbox element for expanding photo/video
+   */
+  var colorbox_elm = $('.colorbox-element');
+  if(colorbox_elm.length>0){
+    colorbox_elm.unbind('click');
+    colorbox_elm.colorbox({
+      iframe: function(){return ($(this).attr('data-video')=='1');},
+      innerWidth  : function(){return ($(this).attr('data-video')=='1')?640:0;},
+      innerHeight : function(){return ($(this).attr('data-video')=='1')?480:0;}
+    });
+  }
 });
 
 function share_project(social_media, project_url, message){
