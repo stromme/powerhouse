@@ -22,8 +22,8 @@
             Powerhouse Paving LLC.<br />
             West Beech Street<br />
             Islip, NY 11751<br /><br />
-            Phone: (631) 277-8400<br />
-            Fax: &nbsp; &nbsp; (631) 277-8416
+            Phone: <?=get_contact_number()?><br />
+            Fax: &nbsp; &nbsp; <?=get_contact_number('fax')?>
           </div>
           <div class="title">AFFILIATES</div>
           <a href="http://www.orangeseweranddrain.com" class="affiliate-link">

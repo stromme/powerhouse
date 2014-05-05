@@ -18,7 +18,7 @@ get_header(); ?>
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
       <div class="contact-cta">
         <div><span class="dark"><span class="glyphicon glyphicon-question-sign"></span> HAVE QUESTIONS?</span></div>
-        <div><a href="tel:<?=format_phone_plain('(631) 277-8400')?>"><span class="glyphicon glyphicon-earphone"></span> (631) 277-8400</a></div>
+        <div><a href="tel:<?=format_phone_plain(get_contact_number())?>"><span class="glyphicon glyphicon-earphone"></span> <?=get_contact_number()?></a></div>
         <div><a href="mailto:support@powerhousepaving.com"><span class="glyphicon glyphicon-envelope"></span> support@powerhousepaving.com</a></div>
         <a class="button cta" href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Body');}">GET A QUOTE</a>
       </div>

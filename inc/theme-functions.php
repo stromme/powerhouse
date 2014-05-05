@@ -232,3 +232,7 @@ function get_facebook_meta_for_videos(){
   }
 }
 add_action('wp_head', 'get_facebook_meta_for_videos', 1);
+
+function get_contact_number($type='phone'){
+  return '(631) 277-'.(($type=='fax')?'8416':'8400');
+}

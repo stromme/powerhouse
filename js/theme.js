@@ -171,6 +171,27 @@ $(document).ready(function(){
       innerHeight : function(){return ($(this).attr('data-video')=='1')?480:0;}
     });
   }
+
+  if(!is_touch_device()){
+    $("a[href*='tel:']").attr('href', 'javascript:void(0);');
+    $(document).on('click', 'a.show-phone', function(e){
+      e.preventDefault();
+      var btn = $(this);
+      if(!btn.hasClass('disabled')){
+        var icon = $('span', btn);
+        btn.html(' <span class="fade-out-text" style="position:relative;left:0;opacity:1;">'+btn.text()+'</span>');
+        btn.prepend(icon);
+        $('.fade-out-text', btn).animate({'left':10,'opacity':0}, 'fast', function(){
+          $(this).remove();
+          btn.html(' <span class="fade-in-number" style="position:relative;left:40px;opacity:0;">'+btn.attr('data-phone')+'</span>');
+          btn.prepend(icon);
+          $('.fade-in-number', btn).animate({'left':0,'opacity':1}, 'slow', function(){
+            btn.removeClass('disabled show-phone');
+          });
+        });
+      }
+    });
+  }
 });
 
 function share_project(social_media, project_url, message){
@@ -201,4 +222,12 @@ function share_project(social_media, project_url, message){
            ',left='   + left +
            ',resizable=1';
   window.open(url, social_media, opts);
+}
+
+function is_touch_device() {
+  var bool = false;
+  if(('ontouchstart' in window) || (window.DocumentTouch && (document instanceof DocumentTouch)) || navigator.msMaxTouchPoints>0){
+    bool = true;
+  }
+  return bool;
 }

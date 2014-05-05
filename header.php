@@ -55,7 +55,7 @@
             </div>
           </span>
           <a href="" data-toggle="modal" data-target="#estimate" onclick="javascript:if(typeof ga!='undefined' && ga){ga('send', 'event', 'Interest', 'Open web lead', 'Header');}" class="button cta">GET A QUOTE</a>
-          <a href="tel:<?=format_phone_plain('(631) 277-8400')?>" class="button phone"><span class="glyphicon glyphicon-earphone"></span> (631) 277-8400</a>
+          <a href="tel:<?=format_phone_plain(get_contact_number())?>" class="button phone"><span class="glyphicon glyphicon-earphone"></span> <?=get_contact_number()?></a>
           <div class="clearfix"></div>
         </div>
         <div class="clearfix"></div>
