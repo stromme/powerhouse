@@ -236,3 +236,8 @@ add_action('wp_head', 'get_facebook_meta_for_videos', 1);
 function get_contact_number($type='phone'){
   return '(631) 277-'.(($type=='fax')?'8416':'8400');
 }
+
+// For team order
+function compare_team_order($a,$b) {
+  return $a->order > $b->order;
+}

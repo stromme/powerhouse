@@ -36,6 +36,8 @@ class Powerhouse_Team {
       <p><input type="text" name="facebook" value="<?php echo $custom_val['facebook'][0]; ?>" style="width:100%"></p>
       <h4>Twitter</h4>
       <p><input type="text" name="twitter" value="<?php echo $custom_val['twitter'][0]; ?>" style="width:100%"></p>
+      <h4>Order</h4>
+      <p><input type="text" name="order" value="<?php echo $custom_val['order'][0]; ?>" style="width:50px"></p>
       <?php
     }
  	}
@@ -83,7 +85,8 @@ class Powerhouse_Team {
          'email',
          'googleplus',
          'facebook',
-         'twitter'
+         'twitter',
+         'order'
        );
        if (count($meta_keys) > 0) {
          foreach ($meta_keys as $key) {

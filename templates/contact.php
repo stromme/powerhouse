@@ -55,11 +55,14 @@ get_header(); ?>
   if(count($teams)>0){
     foreach($teams as $i=>$t){
       $terms = wp_get_post_terms($t->ID, 'position');
+      $order = get_post_meta($t->ID, 'order', true);
       $teams[$i]->term_id = isset($terms[0]->term_id)?$terms[0]->term_id:'';
       $teams[$i]->term_name = isset($terms[0]->name)?$terms[0]->name:'';
       $teams[$i]->term_parent_id = isset($terms[0]->parent)?$terms[0]->parent:'';
+      $teams[$i]->order = ($order>0)?intval($order):999;
     }
   }
+  uasort($teams, "compare_team_order");
   $parent_terms = get_terms('position');
   if(count($parent_terms)>0){
     foreach($parent_terms as $pt){
