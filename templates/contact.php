@@ -91,7 +91,7 @@ get_header(); ?>
             <a href="<?=$t->guid?>" class="name"><?=$t->post_title?></a>
             <div class="position"><?=$t->term_name?></div>
             <?php if($t->post_excerpt!=''){ ?>
-            <p class="excerpt"><?=get_excerpt($t->post_excerpt, 70)?>... <a href="<?=$t->guid?>">Read more</a></p>
+            <p class="excerpt"><?=get_excerpt($t->post_excerpt, 60)?>... <a href="<?=$t->guid?>">Read more</a></p>
             <?php } ?>
             <div class="social-contact">
               <?php if($fb!=''){ ?><a href="<?=$fb?>" class="social facebook"></a><?php } ?>
