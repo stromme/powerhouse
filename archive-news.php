@@ -18,7 +18,7 @@ $news = get_items('news', $per_page+1);
       $i = 0;
       foreach($news as $n){
         if($i<$per_page){
-          $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($n->ID), 'large');
+          $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($n->ID), 'medium');
           $source_name = get_post_meta($n->ID, 'source_name', true);
           $source_url = get_post_meta($n->ID, 'source_url', true);
     ?>
