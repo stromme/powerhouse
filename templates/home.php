@@ -123,7 +123,7 @@ get_header(); ?>
     <div class="col-xs-12">
       <fieldset>
         <legend><h2 class="title">Powerhouse Paving in the News</h2></legend>
-        <div class="subtitle">Leading the roadway and parking lot paving for over 50 years.</div>
+        <div class="subtitle">Leading the Asphalt Maintenance and Site Work business for over 50 Years.</div>
       </fieldset>
     </div>
     <?php
@@ -131,47 +131,47 @@ get_header(); ?>
     ?>
     <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
       <?php if(isset($news[0])){
-        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[0]->ID), 'large');
+        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[0]->ID), 'medium');
         $source_name = get_post_meta($news[0]->ID, 'source_name', true);
         $source_url = get_post_meta($news[0]->ID, 'source_url', true);
       ?>
       <div class="news-item feature">
-        <a href="<?=$news[0]->guid?>" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
+        <a href="<?=get_home_url()?>/news/<?=$news[0]->post_name?>/" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
         <div class="content">
           <div class="date"><?=date('F d, Y', strtotime($news[0]->post_date))?></div>
           <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
-          <a href="<?=$news[0]->guid?>" class="title"><?=$news[0]->post_title?></a>
-          <p><?=get_excerpt($news[0]->post_excerpt, 200)?>... <a href="<?=$news[0]->guid?>">Read more</a></p>
+          <a href="<?=get_home_url()?>/news/<?=$news[0]->post_name?>/" class="title"><?=$news[0]->post_title?></a>
+          <p><?=get_excerpt($news[0]->post_excerpt, 200)?>... <a href="<?=get_home_url()?>/news/<?=$news[0]->post_name?>/">Read more</a></p>
         </div>
       </div>
       <?php } ?>
     </div>
     <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
       <?php if(isset($news[1])){
-        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[1]->ID), 'large');
+        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[1]->ID), 'medium');
         $source_name = get_post_meta($news[1]->ID, 'source_name', true);
         $source_url = get_post_meta($news[1]->ID, 'source_url', true);
       ?>
       <div class="news-item">
-        <a href="" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);background-position:center center;"></a>
+        <a href="<?=get_home_url()?>/news/<?=$news[1]->post_name?>/" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);background-position:center center;"></a>
         <div class="content">
           <div class="date"><?=date('M d, Y', strtotime($news[1]->post_date))?></div>
           <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
-          <a href="<?=$news[1]->guid?>" class="title"><?=$news[1]->post_title?></a>
+          <a href="<?=get_home_url()?>/news/<?=$news[1]->post_name?>/" class="title"><?=$news[1]->post_title?></a>
         </div>
       </div>
       <?php } ?>
       <?php if(isset($news[2])){
-        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[2]->ID), 'large');
+        $thumb = wp_get_attachment_image_src(get_post_thumbnail_id($news[2]->ID), 'medium');
         $source_name = get_post_meta($news[2]->ID, 'source_name', true);
         $source_url = get_post_meta($news[2]->ID, 'source_url', true);
       ?>
       <div class="news-item">
-        <a href="" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
+        <a href="<?=get_home_url()?>/news/<?=$news[2]->post_name?>/" class="thumb" style="background-image: url(<?=isset($thumb[0])?$thumb[0]:''?>);"></a>
         <div class="content">
           <div class="date"><?=date('M d, Y', strtotime($news[2]->post_date))?></div>
           <?php if($source_name!='' && $source_url!=''){ ?><ul class="category"><li><a href="<?=$source_url?>" target="_blank" rel="nofollow"><?=$source_name?></a></li></ul><?php } ?>
-          <a href="<?=$news[2]->guid?>" class="title"><?=$news[2]->post_title?></a>
+          <a href="<?=get_home_url()?>/news/<?=$news[2]->post_name?>/" class="title"><?=$news[2]->post_title?></a>
         </div>
       </div>
       <?php } ?>
