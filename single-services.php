@@ -19,7 +19,9 @@ if(isset($thumb[0])) $slide_images[] = $thumb[0];
 $args = array(
   'post_type' => 'attachment',
   'posts_per_page' => -1,
-  'post_parent' => get_the_ID()
+  'post_parent' => get_the_ID(),
+  'orderby' => 'name',
+  'order' => 'asc'
 );
 if($thumb_id){
   $args['exclude'] = $thumb_id;
@@ -27,7 +29,7 @@ if($thumb_id){
 $attachments = get_posts($args);
 if(count($attachments)>0){
   foreach($attachments as $a){
-    $image = wp_get_attachment_image_src($a->ID, 'full');
+    $image = wp_get_attachment_image_src($a->ID, 'large');
     $slide_images[] = $image[0];
   }
 }
