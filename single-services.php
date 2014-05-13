@@ -113,7 +113,7 @@ if($count_slide>0){
           <div class="title">RELATED SERVICES</div>
           <ul>
             <?php foreach($services as $s){ ?>
-            <li><a href="<?=$s->guid?>"><?=$s->post_title?></a></li>
+            <li><a href="<?=get_home_url()?>/services/<?=$s->post_name?>/"><?=$s->post_title?></a></li>
             <?php } ?>
           </ul>
         </div>

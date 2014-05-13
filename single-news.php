@@ -68,7 +68,7 @@ $recent = get_posts(array(
           <div class="title">RECENT POWERHOUSE NEWS</div>
         </div>
         <?php foreach($recent as $r){ ?>
-        <a href="<?=$r->guid?>" class="indent"><?=$r->post_title?></a>
+        <a href="<?=get_home_url()?>/news/<?=$r->post_name?>/" class="indent"><?=$r->post_title?></a>
         <?php } ?>
         <div class="shadow"></div>
       </div>
@@ -97,7 +97,7 @@ $recent = get_posts(array(
           <div class="title">RELATED SERVICES</div>
           <ul>
             <?php foreach($services as $s){ ?>
-            <li><a href="<?=$s->guid?>"><?=$s->post_title?></a></li>
+            <li><a href="<?=get_home_url()?>/services/<?=$s->post_name?>/"><?=$s->post_title?></a></li>
             <?php } ?>
           </ul>
         </div>

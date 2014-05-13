@@ -11,6 +11,7 @@ class Powerhouse_Services {
    * Add meta box
    */
   function add_meta_box(){
+    add_meta_box('service_order', 'Service order', array($this, 'order_meta_box'), 'services', 'normal', 'high');
     for ($i = 1; $i <= 10; $i++) {
       add_meta_box('resource_'.$i, 'Resource #'.$i, array($this, 'resource_meta_box'), 'services', 'normal', 'low', array($i));
     }
@@ -23,13 +24,13 @@ class Powerhouse_Services {
  	 */
  	function insert_post_meta_data($post_id, $post = null) {
     if($post->post_type=='services'){
-      //var_dump($_POST);
       $meta_keys = array();
       for ($i = 1; $i <= 10; $i++) {
         $meta_keys[] = 'resource_name_'.$i;
         $meta_keys[] = 'resource_url_'.$i;
         $meta_keys[] = 'resource_type_'.$i;
       }
+      $meta_keys[] = 'order';
       if (count($meta_keys) > 0) {
         foreach ($meta_keys as $key) {
           $val = isset($_POST[$key]) ? $_POST[$key] : null;
@@ -43,6 +44,17 @@ class Powerhouse_Services {
     }
  		return $post_id;
  	}
+
+  function order_meta_box($post) {
+    if($post->post_type=='services'){
+      $custom_val = get_post_custom($post->ID);
+      ?>
+      <label for="service_order" style="float:left;line-height:26px;margin-right:10px;">Order</label>
+      <input id="service_order" type="text" name="order" value="<?php echo $custom_val['order'][0]; ?>" style="width:100px">
+      <em>(default no order)</em>
+      <?php
+    }
+  }
 
   function resource_meta_box($post, $args) {
     if($post->post_type=='services'){

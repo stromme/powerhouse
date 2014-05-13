@@ -37,7 +37,7 @@ class Powerhouse_Team {
       <h4>Twitter</h4>
       <p><input type="text" name="twitter" value="<?php echo $custom_val['twitter'][0]; ?>" style="width:100%"></p>
       <h4>Order</h4>
-      <p><input type="text" name="order" value="<?php echo $custom_val['order'][0]; ?>" style="width:50px"></p>
+      <p><input type="text" name="order" value="<?php echo $custom_val['order'][0]; ?>" style="width:100px"></p>
       <?php
     }
  	}

@@ -1,10 +1,18 @@
-<?php get_header(); ?>
+<?php
+get_header();
+global $wp_query;
+?>
 <div class="static-banner">
   <img src="<?=get_template_directory_uri()?>/images/static_banner.jpg" />
-  <div class="caption">New York's<br /><strong>most experienced</strong><br />paving team</div>
+  <div class="caption">
+  <?php if(isset($wp_query->queried_object->slug) && $wp_query->queried_object->slug=='professional-services') { ?>
+  Long Island's<br /><strong>most experienced</strong><br />asphalt maintenance and site work team
+  <?php } else { ?>
+  New York's<br /><strong>most experienced</strong><br />paving team
+  <?php } ?>
+  </div>
 </div>
 <?php
-global $wp_query;
 if(isset($wp_query->queried_object->term_id)){
 ?>
 <div class="container article-content">
@@ -35,7 +43,7 @@ if(isset($wp_query->queried_object->term_id)){
             <div class="title">NEWS</div>
             <ul>
               <?php $i=0; foreach($news as $n){ if($i<10){ ?>
-              <li><a href="<?=$n->guid?>"><?=$n->post_title?></a></li>
+              <li><a href="<?=get_home_url()?>/news/<?=$n->post_name?>/"><?=$n->post_title?></a></li>
               <?php } $i++; } ?>
               <?php if(count($news)>10){ ?>
               <li><a href="<?=get_home_url()?>/news/">Read More News &raquo;</a></li>
@@ -60,6 +68,11 @@ if(isset($wp_query->queried_object->term_id)){
         )
       ));
       if(count($services)>0){
+        foreach($services as $i=>$s){
+          $order = get_post_meta($s->ID, 'order', true);
+          $services[$i]->order = ($order>0)?intval($order):0;
+        }
+        uasort($services, "compare_order");
     ?>
       <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
         <div class="sidebar">
@@ -68,7 +81,7 @@ if(isset($wp_query->queried_object->term_id)){
             <div class="title">SERVICES</div>
             <ul>
               <?php foreach($services as $s){ ?>
-              <li><a href="<?=$s->guid?>"><?=$s->post_title?></a></li>
+              <li><a href="<?=get_home_url()?>/services/<?=$s->post_name?>/"><?=$s->post_title?></a></li>
               <?php } ?>
             </ul>
           </div>

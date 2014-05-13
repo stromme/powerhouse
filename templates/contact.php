@@ -62,7 +62,7 @@ get_header(); ?>
       $teams[$i]->order = ($order>0)?intval($order):999;
     }
   }
-  uasort($teams, "compare_team_order");
+  uasort($teams, "compare_order");
   $parent_terms = get_terms('position');
   if(count($parent_terms)>0){
     foreach($parent_terms as $pt){

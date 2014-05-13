@@ -237,7 +237,7 @@ function get_contact_number($type='phone'){
   return '(631) 277-'.(($type=='fax')?'8416':'8400');
 }
 
-// For team order
-function compare_team_order($a,$b) {
+// For order
+function compare_order($a,$b) {
   return $a->order > $b->order;
 }
